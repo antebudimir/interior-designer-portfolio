@@ -1,0 +1,42 @@
+// Skills component
+.software,
+.language {
+	@include flex-layout(row, wrap);
+	justify-content: center;
+}
+
+.language {
+	margin-bottom: 1rem;
+}
+
+.meters-1 {
+	margin-left: 4rem;
+	@include respond-to-width(1024px) {
+		margin-left: 4.6rem;
+	}
+}
+.meters-2 {
+	margin-left: 1rem;
+}
+.meters-3 {
+	margin-left: 1rem;
+}
+
+// meter gauge
+meter::-webkit-meter-bar {
+	height: 1rem;
+}
+
+meter::-webkit-meter-optimum-value {
+	background: $primary-color;
+}
+
+// Both meter and moz-meter-bar necessary for changing the radius in Firefox.
+meter {
+	border-radius: $border-radius-primary;
+}
+
+meter::-moz-meter-bar {
+	background: $primary-color;
+	border-radius: $border-radius-primary;
+}

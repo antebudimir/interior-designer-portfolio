@@ -1,0 +1,44 @@
+#contact {
+	flex: 1; // sticking the footer to the bottom
+
+	@include respond-to-width(600px) {
+		@include flex-layout(column, nowrap);
+		justify-content: center;
+	}
+}
+
+form {
+	text-align: center;
+}
+
+.form-group {
+	margin: 0 0 1rem;
+}
+
+label {
+	display: block;
+	margin: 1rem 0 0.2rem;
+}
+
+input,
+textarea {
+	border: 1px solid $primary-color;
+	color: $primary-color;
+	box-shadow: $box-shadow-1;
+	width: 100%;
+	max-width: 48rem;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+input:focus,
+textarea:focus,
+input:focus-within,
+textarea:focus-within {
+	border: 1px solid $tertiary-color;
+	box-shadow: 0 0 0 100vmax $primary-color-transparent;
+}
+
+textarea::placeholder {
+	line-height: 2.7;
+}

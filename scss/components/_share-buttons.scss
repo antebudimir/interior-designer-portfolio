@@ -1,0 +1,134 @@
+// Share buttons
+#sharing-links {
+	@include flex-layout(column, nowrap);
+	z-index: 3;
+	position: fixed;
+	right: 5%;
+	bottom: 4.5rem;
+
+	@include respond-to-width(1024px) {
+		right: 0;
+	}
+}
+
+.sharing-link,
+.sharing-link.open {
+	opacity: 1;
+	position: relative;
+	border: none;
+	border-radius: 50%;
+	overflow: hidden;
+	width: $button-size;
+	height: $button-size;
+	margin: 0.5rem 0;
+	transition: all 200ms;
+
+	&:hover,
+	&:focus {
+		@include pop-out-2;
+	}
+
+	@include respond-to-width(1024px) {
+		cursor: pointer;
+	}
+}
+
+.sharing-link {
+	background: $primary-color;
+}
+
+.facebook,
+.whatsapp,
+.telegram,
+.email {
+	opacity: 0;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.fa-share-alt,
+.fa-times,
+.fa-facebook,
+.fa-whatsapp,
+.fa-telegram,
+.fa-envelope-open-o {
+	color: rgb(255, 255, 255);
+	font-size: 1.5rem;
+}
+
+.fa-share-alt {
+	transform: translate(-5%, 10%);
+}
+
+.fa-telegram {
+	transform: translate(55%, 50%);
+}
+
+.fa-envelope-open-o {
+	transform: translate(51%, 47%);
+}
+
+.fa-facebook {
+	transform: translate(110%, 50%);
+}
+
+.fa-whatsapp {
+	font-size: 1.7rem;
+	transform: translate(50%, 42%);
+}
+
+.facebook {
+	background: rgb(60, 91, 155);
+}
+
+.whatsapp {
+	background: rgb(11, 194, 4);
+}
+
+.telegram {
+	background: rgb(0, 136, 204);
+}
+
+.email {
+	background: rgb(243, 187, 3);
+}
+
+.toggle .fa-times {
+	display: none;
+}
+
+.toggle.open:hover > .fa-times,
+.toggle.open:hover {
+	background: $primary-color;
+	color: $tertiary-color;
+	padding-top: 0.25rem;
+}
+
+.toggle.open .fa-times {
+	display: initial;
+	transform: rotate(0) scale(1);
+}
+
+.toggle.open .fa-share-alt {
+	display: none;
+	transform: rotate(90deg) scale(0);
+}
+
+.open.facebook {
+	transition-delay: 150ms;
+}
+
+.open.whatsapp {
+	transition-delay: 100ms;
+}
+
+.open.telegram {
+	transition-delay: 50ms;
+}
+
+.open.email {
+	transition-delay: 0ms;
+}

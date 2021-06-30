@@ -1,0 +1,16 @@
+// styles related to the scrollbar
+html {
+	scrollbar-color: $tertiary-color $scrollbar-bg-color;
+}
+
+body::-webkit-scrollbar {
+	width: 17px;
+}
+
+body::-webkit-scrollbar-track {
+	background: $scrollbar-bg-color;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: $tertiary-color;
+}

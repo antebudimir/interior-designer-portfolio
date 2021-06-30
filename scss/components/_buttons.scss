@@ -1,0 +1,55 @@
+// Filter buttons
+#filters {
+	@include flex-layout(column, nowrap);
+	align-items: center;
+
+	@include respond-to-width(912px) {
+		@include flex-layout(row, nowrap);
+		justify-content: center;
+		align-items: initial;
+	}
+}
+
+.filter-btn {
+	@include button;
+	width: 90%;
+	max-width: 48rem;
+
+	&:not(:last-child) {
+		margin-bottom: $spacing-1;
+	}
+
+	@include respond-to-width(912px) {
+		width: initial;
+		max-width: initial;
+		margin: 0 0.5rem;
+		padding: 1rem;
+
+		&:not(:last-child) {
+			margin-bottom: 0;
+		}
+
+		// Padding to even out interior and exterior filter items
+		&:nth-of-type(1) {
+			padding-left: 1.4rem;
+			padding-right: 1.4rem;
+			// width: 4rem;
+		}
+		&:nth-of-type(2) {
+			padding-left: 1.65rem;
+			padding-right: 1.65rem;
+			// width: 7.6rem;
+		}
+		&:nth-of-type(4) {
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+			// width: 9.8rem;
+		}
+	}
+}
+
+.form-btn {
+	@include button;
+	width: 10rem;
+	margin-bottom: $spacing-1;
+}

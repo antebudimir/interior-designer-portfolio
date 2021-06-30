@@ -1,0 +1,161 @@
+// Gallery
+#gallery {
+	@include sticky-footer; // sticking illustrations footer to the bottom
+}
+
+#grid-gallery {
+	flex: 1; // sticking the footer to the bottom
+
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+	gap: 1rem 0;
+	margin: 1rem 0;
+
+	@include respond-to-width(912px) {
+		grid-template-columns: repeat(2, 1fr);
+		place-items: initial;
+		gap: 1rem;
+		margin: 1rem 3rem;
+	}
+	@include respond-to-width(1024px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@include respond-to-width(1600px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.placeholder {
+	position: relative;
+	width: 90%;
+	max-width: 48rem;
+	height: auto;
+
+	@include respond-to-width(912px) {
+		width: 100%;
+		max-width: initial;
+	}
+	@include respond-to-width(1024px) {
+		overflow: hidden;
+
+		&:hover,
+		&:focus {
+			@include pop-out-3;
+		}
+	}
+}
+
+.image-thumb {
+	width: 100%;
+	height: auto;
+}
+
+.project-details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include flex-layout(column, nowrap);
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background: $on-hover-1;
+
+	@include respond-to-width(600px) {
+		background: $on-hover-2;
+	}
+	@include respond-to-width(1024px) {
+		top: -100%;
+		left: -100%;
+		transition: all $transition-delay-1 linear;
+		transform: rotate(90deg);
+	}
+
+	@include respond-to-width(1850px) {
+		font-size: 120%;
+	}
+}
+
+.image-title {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0.3rem 1rem;
+	background: $primary-color-transparent;
+	color: $secondary-color;
+
+	@include respond-to-width(1024px) {
+		left: 100%;
+		transition: left $transition-delay-1 linear;
+	}
+}
+
+.summary {
+	align-self: center;
+	padding: 0 1rem;
+
+	@include respond-to-width(600px) {
+		align-self: flex-start;
+		margin: 2rem 0 1rem;
+		font-family: 'Nunito-Bold';
+	}
+}
+
+.square {
+	font-size: 0.6rem;
+}
+
+.description {
+	display: none;
+	@include respond-to-width(600px) {
+		display: initial;
+		padding: 0 1rem;
+	}
+}
+
+.summary,
+.description {
+	@include respond-to-width(1024px) {
+		opacity: 0;
+	}
+}
+
+.hide-on-desktop {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: $primary-color;
+	color: $secondary-color;
+	text-align: center;
+
+	@include respond-to-width(1024px) {
+		display: none;
+	}
+}
+
+.placeholder:hover .project-details,
+.placeholder:focus .project-details {
+	@include respond-to-width(1024px) {
+		top: 0;
+		left: 0;
+		transform: rotate(0deg);
+	}
+}
+
+.placeholder:hover .image-title,
+.placeholder:focus .image-title {
+	@include respond-to-width(1024px) {
+		left: 0;
+		transition-delay: $transition-delay-1;
+	}
+}
+
+.placeholder:hover .summary,
+.placeholder:focus .summary,
+.placeholder:hover .description,
+.placeholder:focus .description {
+	@include respond-to-width(1024px) {
+		opacity: 1;
+		transition: opacity $transition-delay-2 ease-in-out;
+	}
+}

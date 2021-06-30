@@ -1,0 +1,25 @@
+// Underline effect
+.underline {
+	position: relative;
+
+	&:hover,
+	&:focus,
+	&:active {
+		cursor: pointer;
+
+		&:after {
+			width: 100%;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -0.15rem;
+		left: 0;
+		width: 0;
+		height: 0.13rem;
+		background: $tertiary-color;
+		transition: width 250ms ease-in-out;
+	}
+}

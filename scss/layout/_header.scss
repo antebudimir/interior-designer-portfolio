@@ -1,0 +1,55 @@
+// Header
+header {
+	z-index: 2;
+	position: sticky;
+	top: 0;
+	box-shadow: $box-shadow-1;
+	@include flex-layout(column, nowrap);
+	align-items: center;
+}
+
+// Menu
+nav {
+	width: 100%;
+	background: $secondary-color;
+	font-family: 'Nunito-Bold';
+
+	@include respond-to-width(1024px) {
+		font-size: 1.2rem;
+	}
+}
+
+#menu {
+	@include flex-layout(row, nowrap);
+	justify-content: space-evenly;
+	padding: 1.5rem 0 1rem;
+	@include respond-to-width(912px) {
+		justify-content: center;
+	}
+}
+
+.menu-item {
+	text-align: center;
+
+	&:hover,
+	&:hover > .menu-link,
+	&:focus,
+	&:focus > .menu-link {
+		@include pop-out-1;
+	}
+
+	@include respond-to-width(912px) {
+		&:first-child {
+			margin-right: 6rem;
+		}
+	}
+}
+
+.menu-link {
+	color: $primary-color;
+}
+
+.fa-camera,
+.fa-file-text {
+	font-size: 1.5rem;
+}

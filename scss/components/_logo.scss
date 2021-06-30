@@ -1,0 +1,23 @@
+#logo {
+	@include flex-layout(row, nowrap);
+	justify-content: center;
+	padding: 2rem 0;
+
+	& a {
+		&:hover,
+		&:focus {
+			@include pop-out-3;
+		}
+	}
+}
+
+.logo-img {
+	width: 85%;
+	max-width: 48rem;
+	margin: auto;
+
+	@include respond-to-width(1024px) {
+		width: 100%;
+		margin: 0;
+	}
+}

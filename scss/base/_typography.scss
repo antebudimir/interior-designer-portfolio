@@ -1,0 +1,38 @@
+// @font-faces:
+@font-face {
+	font-family: 'Nunito';
+	src: url(../fonts/Nunito-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Nunito-Bold';
+	src: url(../fonts/Nunito-Bold.woff) format('woff');
+}
+
+// All fonts declared:
+html {
+	font-family: 'Nunito', sans-serif;
+}
+
+input,
+select,
+textarea,
+button {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+h2 {
+	margin: 0 0 1rem;
+	text-align: center;
+}
+
+h3 {
+	min-width: 100%;
+	margin: 1rem 0;
+	text-align: center;
+}
+
+p {
+	line-height: 1.3;
+}

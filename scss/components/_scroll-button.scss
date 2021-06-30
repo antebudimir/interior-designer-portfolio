@@ -1,0 +1,23 @@
+.scrollButton {
+	z-index: 3;
+	border: none;
+	border-radius: 50%;
+	display: none;
+	position: fixed;
+	right: 5%;
+	bottom: 1rem;
+	width: $button-size;
+	height: $button-size;
+	background-color: $primary-color;
+	color: $secondary-color;
+
+	&:hover,
+	&:focus {
+		@include pop-out-2;
+	}
+
+	@include respond-to-width(1024px) {
+		right: 0;
+		cursor: pointer;
+	}
+}

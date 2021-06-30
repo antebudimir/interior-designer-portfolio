@@ -1,0 +1,26 @@
+// Colors
+$primary-color: rgb(56, 184, 201);
+$primary-color-transparent: rgba(56, 184, 201, 0.7);
+$secondary-color: rgb(255, 255, 255);
+$tertiary-color: rgb(199, 74, 82);
+$text-color: rgb(128, 128, 128);
+$on-hover-1: rgba(199, 74, 82, 0.5);
+$on-hover-2: rgba(199, 74, 82, 0.8);
+$scrollbar-bg-color: rgb(255, 255, 255);
+
+// Button
+$button-size: 3rem;
+
+// Shadows
+$box-shadow-1: $primary-color-transparent 0px 5px 20px,
+	$primary-color-transparent 0px 2px 2px;
+
+// Delays
+$transition-delay-1: 200ms;
+$transition-delay-2: 1000ms;
+
+// Spacing
+$spacing-1: 0.3rem;
+
+// Border radius
+$border-radius-primary: 2rem;

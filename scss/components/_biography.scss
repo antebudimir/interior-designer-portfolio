@@ -1,0 +1,40 @@
+// Biography
+#biography {
+	margin: 1rem;
+
+	@include respond-to-width(1024px) {
+		max-width: 60rem;
+		margin: 1rem auto;
+		font-size: 120%;
+	}
+}
+
+#about img {
+	width: 100%;
+	height: auto;
+
+	@include respond-to-width(600px) {
+		float: right;
+		max-width: 20rem;
+		margin: 0.3rem 0 0.2rem 1rem;
+	}
+}
+
+#about p {
+	margin-top: 1rem;
+	line-height: 1.5;
+}
+
+#about p:not(:last-of-type) {
+	margin-bottom: 1rem;
+}
+
+#about a {
+	color: $primary-color;
+	font-family: 'Nunito-Bold';
+
+	&:hover,
+	&:focus {
+		color: $tertiary-color;
+	}
+}
