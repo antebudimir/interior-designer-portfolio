@@ -76,8 +76,8 @@ if (document.body === homePage) {
 
 		// scrollToTop button
 		if (
-			document.body.scrollTop > 1200 ||
-			document.documentElement.scrollTop > 1200
+			document.body.scrollTop > 1500 ||
+			document.documentElement.scrollTop > 1500
 		) {
 			scrollToTop.style.display = 'block';
 		} else {
