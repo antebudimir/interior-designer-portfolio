@@ -32,10 +32,9 @@ nav {
 	text-align: center;
 
 	&:hover,
-	&:hover > .menu-link,
-	&:focus,
-	&:focus > .menu-link {
+	&:hover > .menu-link {
 		@include pop-out-1;
+		cursor: pointer;
 	}
 
 	@include respond-to-width(912px) {
@@ -47,6 +46,12 @@ nav {
 
 .menu-link {
 	color: $primary-color;
+
+	@include respond-to-width(1024px) {
+		&:focus {
+			@include pop-out-1;
+		}
+	}
 }
 
 .fa-camera,

@@ -38,10 +38,38 @@
 	}
 	@include respond-to-width(1024px) {
 		overflow: hidden;
+	}
 
-		&:hover,
-		&:focus {
+	&:hover {
+		@include pop-out-3;
+	}
+}
+
+.lightbox {
+	@include respond-to-width(1024px) {
+		&:focus > .image-thumb {
 			@include pop-out-3;
+		}
+
+		&:hover .project-details,
+		&:focus .project-details {
+			top: 0;
+			left: 0;
+			transform: rotate(0deg);
+		}
+
+		&:hover .image-title,
+		&:focus .image-title {
+			left: 0;
+			transition-delay: $transition-delay-1;
+		}
+
+		&:hover .summary,
+		&:focus .summary,
+		&:hover .description,
+		&:focus .description {
+			opacity: 1;
+			transition: opacity $transition-delay-2 ease-in-out;
 		}
 	}
 }
@@ -130,32 +158,5 @@
 
 	@include respond-to-width(1024px) {
 		display: none;
-	}
-}
-
-.placeholder:hover .project-details,
-.placeholder:focus .project-details {
-	@include respond-to-width(1024px) {
-		top: 0;
-		left: 0;
-		transform: rotate(0deg);
-	}
-}
-
-.placeholder:hover .image-title,
-.placeholder:focus .image-title {
-	@include respond-to-width(1024px) {
-		left: 0;
-		transition-delay: $transition-delay-1;
-	}
-}
-
-.placeholder:hover .summary,
-.placeholder:focus .summary,
-.placeholder:hover .description,
-.placeholder:focus .description {
-	@include respond-to-width(1024px) {
-		opacity: 1;
-		transition: opacity $transition-delay-2 ease-in-out;
 	}
 }
