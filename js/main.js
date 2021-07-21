@@ -91,6 +91,21 @@ if (document.body === homePage) {
 	});
 }
 
+// Textarea auto resize
+const aboutHome = document.querySelector('#about-home');
+
+if (document.body === aboutHome) {
+	(function autoResize() {
+		const textArea = document.querySelector('[data-autoresize]'),
+			offset = textArea.offsetHeight - textArea.clientHeight;
+
+		textArea.addEventListener('input', (e) => {
+			e.target.style.height = 'auto';
+			e.target.style.height = e.target.scrollHeight + offset + 'px';
+		});
+	})();
+}
+
 // Date
 const currentYear = document.querySelector('#currentYear');
 currentYear.innerText = new Date().getFullYear();
