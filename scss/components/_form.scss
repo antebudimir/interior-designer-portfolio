@@ -38,7 +38,3 @@ textarea:focus-within {
 	border: 1px solid $tertiary-color;
 	box-shadow: 0 0 0 100vmax $primary-color-transparent;
 }
-
-textarea::placeholder {
-	line-height: 2.7;
-}
