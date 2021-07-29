@@ -96,39 +96,42 @@
 	background: rgb(243, 187, 3);
 }
 
+.toggle,
 .toggle .fa-times {
 	display: none;
 }
 
-.toggle.open:hover > .fa-times,
-.toggle.open:hover {
-	background: $primary-color;
-	color: $tertiary-color;
-	padding-top: 0.25rem;
-}
+.toggle {
+	&.open .fa-times {
+		display: initial;
+		transform: rotate(0) scale(1);
+	}
 
-.toggle.open .fa-times {
-	display: initial;
-	transform: rotate(0) scale(1);
-}
+	&.open .fa-share-alt {
+		display: none;
+		transform: rotate(90deg) scale(0);
+	}
 
-.toggle.open .fa-share-alt {
-	display: none;
-	transform: rotate(90deg) scale(0);
-}
+	&.facebook {
+		transition-delay: 150ms;
+	}
 
-.open.facebook {
-	transition-delay: 150ms;
-}
+	&.whatsapp {
+		transition-delay: 100ms;
+	}
 
-.open.whatsapp {
-	transition-delay: 100ms;
-}
+	&.telegram {
+		transition-delay: 50ms;
+	}
 
-.open.telegram {
-	transition-delay: 50ms;
-}
+	&.email {
+		transition-delay: 0ms;
+	}
 
-.open.email {
-	transition-delay: 0ms;
+	&.open:hover > .fa-times,
+	&.open:hover {
+		background: $primary-color;
+		color: $secondary-color;
+		padding-top: 0.25rem;
+	}
 }
