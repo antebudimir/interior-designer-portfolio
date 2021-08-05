@@ -9,6 +9,10 @@ footer {
 
 	@include respond-to-width(1024px) {
 		font-size: 1.2rem;
+
+		& a:focus i {
+			@include pop-out-1;
+		}
 	}
 }
 
